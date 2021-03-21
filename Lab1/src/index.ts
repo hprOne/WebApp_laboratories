@@ -4,10 +4,10 @@ class Stats{
     dataInput3;
     dataInput4;
 
-    dataMin;
-    dataMax;
-    dataAvg;
-    dataSum;
+    dataMin//: HTMLInputElement;
+    dataMax//: HTMLInputElement;
+    dataAvg//: HTMLInputElement;
+    dataSum//: HTMLInputElement;
     
     constructor(){
         this.getElements();
@@ -26,6 +26,15 @@ class Stats{
         this.dataMax = document.querySelector('#max')
         this.dataSum = document.querySelector('#sum')
         this.dataAvg = document.querySelector('#avg')
+        
+        let checkTable: number[] = [this.dataInput1, this.dataInput2, this.dataInput3, this.dataInput4]
+        this.dataMax = Math.max(...checkTable);
+        this.dataMin = Math.min(...checkTable);
+        this.dataSum = this.dataInput1 + this.dataInput2 + this.dataInput3 + this.dataInput4;
+        this.dataAvg = this.dataSum/ 4;
     }
 }
 
+const stats = new Stats();
+
+stats.run()
