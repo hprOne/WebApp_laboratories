@@ -3,23 +3,38 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Lab1 byczq</title>
+  <title>Lab1 - Liczydło</title>
   <meta name="description" content="lab1">
   <meta name="author" content="SitePoint">
 </head>
 
 <body>
-  <div class="data-inputs">
-    <input type="text" id="data1" value="1"></br>
-    <input type="text" id="data2" value="1"></br>
-    <input type="text" id="data3" value="1"></br>
-    <input type="text" id="data4" value="1"></br>
+  <div>
+    <input type="number" id="data1" value="2"></br>
+    <input type="number" id="data2" value="2"></br>
+    <input type="number" id="data3" value="2"></br>
+    <input type="number" id="data4" value="2"></br>
   </div>
-  <div class="data-outputs">
-    SUM: <input type="text" id="sum"></br>
-    AVG: <input type="text" id="avg"></br>
-    MIN: <input type="text" id="min"></br>
-    MAX: <input type="text" id="max"></br>
+  <div>
+    <div>
+      <ul>
+        <li>
+          <label for="sum">Sum:</label
+          ><output type="number" disabled="true" id="sum" />
+        </li>
+        <li>
+          <label for="avg">Avg:</label
+          ><output type="number" disabled="true" id="avg" />
+        </li>
+        <li>
+          <label for="min">Min:</label
+          ><output type="number" disabled="true" id="min" />
+        </li>
+        <li>
+          <label for="max">Max:</label
+          ><output type="number" disabled="true" id="max" />
+        </li>
+      </ul>
   </div>
 
   <script src="index.js"></script>
