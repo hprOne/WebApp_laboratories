@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #8BC6EC;
+  background-image: linear-gradient(90deg, #ccffff 0%, #00ffff 100%);
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.list-element{
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+  padding: 10px;
+
+  .location{
+    
+
+    .city-name{
+      font-size: 30px;
+
+      p{
+        display: inline;
+      }
+    }
+  }
+
+}
