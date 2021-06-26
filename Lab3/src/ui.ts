@@ -27,7 +27,7 @@ export class userInterface{
         weatherWrapper.className = "weatherWrapper";
         weatherWrapper.id = weatherData.name;
 
-        // main details
+        //miasto+temp+ikonka
         const weatherMainInfoWrapper = document.createElement('div');
         weatherMainInfoWrapper.className = "weatherMain"
 
@@ -46,7 +46,7 @@ export class userInterface{
         weatherMainInfoWrapper.appendChild(weatherCityName);
         weatherMainInfoWrapper.appendChild(weatherTemp);
 
-        // details
+        // wilgotnosc+cisnienie
         const weatherDetailInfoWrapper = document.createElement('div');
         weatherDetailInfoWrapper.className = "weatherDetails";
         
@@ -58,7 +58,7 @@ export class userInterface{
         weatherPressure.textContent = `Ciśnienie: ${(weatherData.main.pressure)}hPa `;
         weatherPressure.className = "weatherPressure";
 
-        //remove btn
+        //usuwanie miasta przy uzyciu przycisku
         const removeBtn = document.createElement("button");
         removeBtn.textContent= "Usuń miasto";
         removeBtn.className = "removeCityButton";
