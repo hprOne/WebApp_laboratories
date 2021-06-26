@@ -1,13 +1,10 @@
 class Stats {
 
-    //ilość pól liczydła
-    inputFields: number = 0;
-    //array for values from generated fields
-    inputValuesTable: Array<number> = [];
+    inputFields: number = 0;                                                                            //ilość pól liczydła
+    inputValuesTable: Array<number> = [];                                                               //tabela z liczbami
 
-    constructor() {
-        const checkInputField: HTMLInputElement = document.querySelector('#inputFieldForGenerator');
-        //event listener for checking the input field
+    constructor() {                                                                                     //konstruktor
+        const checkInputField: HTMLInputElement = document.querySelector('#inputFieldForGenerator');    //testowanie 
         checkInputField.addEventListener('input', (event: Event) => 
         { 
             const target = event.target as HTMLInputElement;
@@ -28,9 +25,7 @@ class InputFieldContainerGenerator{
    
     constructor(inputId, count, inputValuesArray: Array<number>) 
     {
-        
-        // input-field generator
-        this.inputNumber.innerText = inputId + 1 + ".";
+        this.inputNumber.innerText = inputId + 1 + ".";                                 // input-field generator
         this.numberInput = document.createElement('input');
         this.numberInput.type = "number";
         this.numberInput.id = 'input' + inputId;
@@ -43,8 +38,7 @@ class InputFieldContainerGenerator{
             new ResultUI(count, inputValuesArray);
         });
 
-        // delete-button generator
-        this.delInputBtn = document.createElement('button');
+        this.delInputBtn = document.createElement('button');                            // generator przycisku do usuwania
         this.delInputBtn.innerText = "Delete";
         this.delInputBtn.addEventListener('click', (event: Event) => 
         {
@@ -56,10 +50,9 @@ class InputFieldContainerGenerator{
             new ResultUI(count, inputValuesArray);
         });
     }
-    generateInputFields() : HTMLDivElement 
+    genInputFields() : HTMLDivElement 
     {
-        //one container per input-field + delete button
-        const inputFieldContainer = document.createElement('div');
+        const inputFieldContainer = document.createElement('div');                     // one container per input-field + delete button
         inputFieldContainer.className = "inputFieldContainer";
         inputFieldContainer.appendChild(this.inputNumber);
         inputFieldContainer.appendChild(this.numberInput);
@@ -69,7 +62,7 @@ class InputFieldContainerGenerator{
     }
 }
 
-class ComputeResult {
+class ComputeResult {                                                                               //liczenie rezultatów
 
     sum: number;
     avg: number;
@@ -87,10 +80,10 @@ class ComputeResult {
         this.sum = inputValues.reduce((a, b) => a + b, 0);
         return this.sum;
     }
-    averageResult(inputValues: Array<number>) 
+    avgResult(inputValues: Array<number>) 
     {
         this.avg = inputValues.reduce((a, b) => a + b, 0);
-        return Number((this.avg / inputValues.length).toFixed(3));
+        return Number((this.avg / inputValues.length).toFixed(3));                                  //średnia do 3 miejsca po przecinku
     }
 }
 
@@ -108,7 +101,7 @@ class ResultUI {
 
         if (inputValues && inputsAmount > 0) {
             isValid = inputValues.every((value) => typeof value === 'number');
-            this.generateUI(inputsAmount, inputValues);
+            this.genUI(inputsAmount, inputValues);
             this.invalidInputDiv.innerHTML = "";
         } else {
             this.invalidInputDiv.innerHTML = "";
@@ -119,34 +112,34 @@ class ResultUI {
         }
     }
 
-    generateInputs(inputsAmount: number, inputValues: Array<number>): void
+    genInputs(inputsAmount: number, inputValues: Array<number>): void
     {        
-        const breakLine = document.createElement('br');
+        const breakLine = document.createElement('br');                                             //załamanie linii
 
         this.inputFieldsDiv.innerHTML = null;
         this.inputFieldsDiv.appendChild(breakLine);
         for (let i = 0; i < inputsAmount; i++) {
-            const input = new InputFieldContainerGenerator(i,inputsAmount, inputValues).generateInputFields();
+            const input = new InputFieldContainerGenerator(i,inputsAmount, inputValues).genInputFields();
             this.inputFieldsDiv.appendChild(input);
         }
     }
-    generateUI(inputsAmount: number, inputValues: Array<number>): void 
+    genUI(inputsAmount: number, inputValues: Array<number>): void 
     {
         const stats = new ComputeResult;
         const resultDivs: Array<HTMLDivElement> = [];
-        this.generateInputs(inputsAmount, inputValues);
+        this.genInputs(inputsAmount, inputValues);
         const valuesFromInputArray = inputValues.slice(0, inputsAmount);
-        // push results into divs 
-        resultDivs.push(this.generateResult('Suma: ', valuesFromInputArray, stats.sumResult))
-        resultDivs.push(this.generateResult('Średnia: ', valuesFromInputArray, stats.averageResult))
-        resultDivs.push(this.generateResult('Minimum:', valuesFromInputArray, stats.minResult))
-        resultDivs.push(this.generateResult('Maksimum:', valuesFromInputArray, stats.maxResult))
+        //REZULTATY - Wrzucenie do div'a
+        resultDivs.push(this.genResult('Suma: ', valuesFromInputArray, stats.sumResult))
+        resultDivs.push(this.genResult('Średnia: ', valuesFromInputArray, stats.avgResult))
+        resultDivs.push(this.genResult('Minimum:', valuesFromInputArray, stats.minResult))
+        resultDivs.push(this.genResult('Maksimum:', valuesFromInputArray, stats.maxResult))
         resultDivs.forEach((element: HTMLDivElement) => 
         {
             this.resultsDiv.appendChild(element);
         });
     }
-    generateResult(name: string, inputValues: Array<number>, ComputeResult: Function): HTMLDivElement 
+    genResult(name: string, inputValues: Array<number>, ComputeResult: Function): HTMLDivElement 
     {
         const resultName = document.createElement('p');
         const value = document.createElement('b');
