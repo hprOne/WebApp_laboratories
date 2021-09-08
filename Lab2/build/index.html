@@ -3,34 +3,31 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Lab2 - </title>
+  <title>Lab2 - Be Musical</title>
   <meta name="description" content="lab1">
   <meta name="author" content="SitePoint">
+  <link href="main.css" rel="stylesheet" type="text/css">
 </head>
-<style>
-  .content {
-    text-align: center;
-    top: 50%;
-    position: relative;
-    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.377) 0%, rgba(255, 0, 0, 0.336) 100%);
-  }
-  body{
-    background-image: linear-gradient(90deg, rgb(163, 225, 241) 0%, rgb(216, 104, 104) 150%);
-  }
-  </style>
 
 <body>
   <div class="content">
-    <audio src="sounds/boom.wav" data-sound="boom"></audio>
-    <audio src="sounds/clap.wav" data-sound="clap"></audio>
-    <audio src="sounds/kick.wav" data-sound="kick"></audio>
-    <audio src="sounds/openhat.wav" data-sound="openhat"></audio>
-    <button id="Akey">Boom - A</button>
-    <button id="Skey">Clap - S</button>
-    <button id="Dkey">Kick - D</button>
-    <button id="Fkey">Openhat - F</button>
-    </br>
-    <button id="playChannel1">Play Channel 1</button>
+    Be Musical!
+  </br>
+  </br>
+  <audio src="sounds/boom.wav" data-sound="boom"></audio>
+  <audio src="sounds/clap.wav" data-sound="clap"></audio>
+  <audio src="sounds/kick.wav" data-sound="kick"></audio>
+  <audio src="sounds/openhat.wav" data-sound="openhat"></audio>
+  <button class="button buttonA" id="Akey">Boom - A</button>
+  <button class="button buttonS" id="Skey">Clap - S</button>
+  <button class="button buttonD" id="Dkey">Kick - D</button>
+  <button class="button buttonF" id="Fkey">Openhat - F</button>
+  </br>
+  </br>
+  <button class="button buttonChannel" id="playChannel1">Play Channel 1</button>
+  <button class="button buttonChannel" id="playChannel2">Play Channel 2</button>
+  <button class="button buttonChannel" id="playChannel3">Play Channel 3</button>
+  <button class="button buttonChannel" id="playChannel4">Play Channel 4</button>
   </div> 
   <script src="index.js"></script>
 </body>
