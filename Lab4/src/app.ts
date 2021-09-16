@@ -92,8 +92,6 @@ export class App {
         this.notes = new Notes(this.ui)
 
     }
-
-
 }
 
 const app = new App();

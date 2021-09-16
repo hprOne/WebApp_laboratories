@@ -16,5 +16,4 @@ export class Note {
         this.date = new Date();
 
     }
-
 }

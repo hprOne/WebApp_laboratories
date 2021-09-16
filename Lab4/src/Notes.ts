@@ -15,8 +15,6 @@ export class Notes {
     constructor(userInterface: userInterface) {
         this.ui = userInterface
 
-
-
         // ! mockup for now 
         const notatka = new Note("1", "Tytuł", "textContent", "#ffffff", true)
         const notatka1 = new Note("2", "Tytuł", "textContent", "#ffffff", false)

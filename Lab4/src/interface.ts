@@ -43,7 +43,6 @@
 
 import { Note } from "./Note";
 
-
 export interface IAppStorage {
     add(note: Note): void;
     getNotes(): any;

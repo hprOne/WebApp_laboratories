@@ -72,8 +72,6 @@ describe("Check default behavior", () => {
         notes.notatki[0].isPinned = !notes.notatki[0].isPinned
         expect(notes.notatki[0].isPinned).toBe(true)
     })
-
-
 })
 
 import 'expect-puppeteer'

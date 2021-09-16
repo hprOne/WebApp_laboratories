@@ -37,5 +37,4 @@ export class AppStorage implements IAppStorage {
         console.log(note)
         localStorage.setItem(`Notatka${id}`, JSON.stringify(note))
     }
-
 }

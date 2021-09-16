@@ -129,10 +129,7 @@ export class userInterface {
             // div.textContent = note.title
             location.appendChild(div)
 
-
             // this.removeButtonsEvent()
-
-
         })
     }
 }
