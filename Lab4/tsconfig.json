@@ -1,13 +1,13 @@
 {
     "compilerOptions": {
+        "outDir": "./dist/",
         "sourceMap": true,
-        // "strictNullChecks": true,
         "noImplicitAny": true,
         "module": "commonjs",
-        "target": "es6",
-        "removeComments": true,
-    },
-    "include": [
-        "src/**/*"
-    ],
+        "target": "es5",
+        "jsx": "react",
+        "allowJs": true,
+        "moduleResolution": "node",
+        // "allowSyntheticDefaultImports": true
+    }
 }

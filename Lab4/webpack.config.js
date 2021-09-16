@@ -1,51 +1,40 @@
-const path = require("path");
-const CopyPlugin = require("copy-webpack-plugin");
+const path = require('path');
 
 module.exports = {
-  mode: "development",
-  entry: "./src/index.ts",
-  output: {
-    filename: "index.js",
-    path: path.resolve(__dirname, "dist")
-  },
-  resolve: {
-    extensions: [".tsx", ".ts", ".js", ".json"]
-  },
-  devtool: "inline-source-map",
-  plugins: [
-    new CopyPlugin([
-      {
-        from: "src/*.html",
-        to: "",
-        flatten: true
-      }
-    ])
-  ],
-  module: {
-    rules: [
-      // all files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'
-      {
-        test: /\.tsx?$/,
-        use: ["ts-loader"],
-        exclude: /node_modules/
-      },
-      {
-        test: /\.s[ac]ss$/i,
-        use: [
-          // Creates `style` nodes from JS strings
-          {
-            loader: "style-loader"
-            // options: {
-            //   // injectType: "singletonStyleTag"
-            //   // injectType: "linkTag"
-            // }
-          },
-          // Translates CSS into CommonJS
-          "css-loader",
-          // Compiles Sass to CSS
-          "sass-loader"
-        ]
-      }
-    ]
-  }
+    entry: './src/App.ts',
+
+    devtool: 'inline-source-map',
+    module: {
+        rules: [{
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
+            },
+            {
+                test: /\.s[ac]ss$/i,
+                use: [
+                    // Creates `style` nodes from JS strings
+                    "style-loader",
+                    // Translates CSS into CommonJS
+                    "css-loader",
+                    // Compiles Sass to CSS
+                    "sass-loader",
+                ],
+            },
+
+
+        ],
+    },
+    devServer: {
+        contentBase: path.join(__dirname, 'dist'),
+        compress: true,
+        port: 9000,
+    },
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js'],
+    },
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist'),
+    },
 };
