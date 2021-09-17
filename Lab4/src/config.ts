@@ -1,1 +1,1 @@
-export const locationOfSaving: "local" | "firestore" = "firestore"
+export const locationOfSaving: "local" | "firestore" = "local"

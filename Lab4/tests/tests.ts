@@ -20,20 +20,20 @@ describe("Check default behavior", () => {
         const noteInfo: Note = {
             id: "1",
             color: "#ffffff",
-            textContent: "Bartek",
+            textContent: "Notatka testowa",
             isPinned: false,
             title: "Title",
             date: new Date()
         }
 
-        expect(new Note("1", "Title", "Bartek", "#ffffff", false)).toMatchObject(noteInfo)
+        expect(new Note("1", "Title", "Notatka testowa", "#ffffff", false)).toMatchObject(noteInfo)
     })
 
     test("Add a note to notes", () => {
         const noteInfo: Note = {
             id: "1",
             color: "#ffffff",
-            textContent: "Bartek",
+            textContent: "Notatka testowa",
             isPinned: false,
             title: "Title",
             date: new Date()
@@ -47,7 +47,7 @@ describe("Check default behavior", () => {
         const noteInfo: Note = {
             id: "1",
             color: "#ffffff",
-            textContent: "Bartek",
+            textContent: "Notatka testowa",
             isPinned: false,
             title: "Title",
             date: new Date()
@@ -62,7 +62,7 @@ describe("Check default behavior", () => {
         const noteInfo: Note = {
             id: "1",
             color: "#ffffff",
-            textContent: "Bartek",
+            textContent: "Notatka testowa",
             isPinned: false,
             title: "Title",
             date: new Date()
@@ -73,15 +73,22 @@ describe("Check default behavior", () => {
         expect(notes.notatki[0].isPinned).toBe(true)
     })
 })
-
+/*
 import 'expect-puppeteer'
 describe('Puppeteer-tests', () => {
 
     beforeAll(async () => {
-        await page.goto('https://google.com');
+        await page.goto('C:\Users\hpr1\source\repos\WebApp_laboratories\WebApp_laboratories\Lab4\dist\index.html');
       });
     
-      it('should be titled "Google"', async () => {
-        await expect(page.title()).resolves.toMatch('Google');
+      it('should be titled "NoteKeep"', async () => {
+        await expect(page.title()).resolves.toMatch('NoteKeep');
       });
 })
+*/
+
+/*
+    komendy do testów:
+        npm install --save-dev ts-jest @types/jest
+        npx jest --watch
+*/
